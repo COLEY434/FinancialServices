@@ -1,3 +1,8 @@
+using AccountService.Core.Interfaces.Repository;
+using AccountService.Infrastructure.Database;
+using AccountService.Infrastructure.Database.Repositories;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +11,10 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddDbContext<AccountServiceDbContext>(options =>
+  options.UseSqlServer(builder.Configuration.GetConnectionString("AccountServiceContext")));
+
+builder.Services.AddScoped<ICustomer, CustomerRepository>();
 
 var app = builder.Build();
 
