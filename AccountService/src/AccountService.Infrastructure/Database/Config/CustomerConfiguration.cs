@@ -18,7 +18,6 @@ namespace AccountService.Infrastructure.Database.Config
             builder.Property(k => k.CustomerID).HasMaxLength(10).IsRequired();
             builder.Property(k => k.FirstName).HasMaxLength(50).IsRequired();
             builder.Property(k => k.LastName).HasMaxLength(50).IsRequired();
-            builder.Property(k => k.Dob).HasMaxLength(20).IsRequired();
             builder.Property(k => k.State).HasMaxLength(20).IsRequired();
             builder.Property(k => k.Country).HasMaxLength(20).IsRequired();
             builder.Property(k => k.Address).HasMaxLength(500).IsRequired();

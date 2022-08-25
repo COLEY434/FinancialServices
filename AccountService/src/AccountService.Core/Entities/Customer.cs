@@ -12,7 +12,7 @@ namespace AccountService.Core.Entities
         public string CustomerID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public string Dob { get; set; }
+        public DateTime Dob { get; set; }
         public string State { get; set; }
         public string Country { get; set; }
         public string Address { get; set; }
