@@ -17,5 +17,6 @@ namespace AccountService.Core.Entities
         public DateTime? ActivationDate { get; set; }
         public DateTime CreatedAt { get; set; }
         public decimal AvaliableBalance { get; set; }
+        public Customer AccountOwner { get; set; }
     } 
 }

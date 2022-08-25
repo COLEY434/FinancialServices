@@ -20,6 +20,10 @@ namespace AccountService.Infrastructure.Database.Config
             builder.Property(k => k.CustomerID).HasMaxLength(10).IsRequired();
             builder.Property(k => k.CreatedAt).IsRequired();
             builder.Property(k => k.AvaliableBalance).IsRequired();
+            builder.HasOne(k => k.AccountOwner)
+                   .WithMany(x => x.Accounts)
+                   .HasForeignKey(k => k.CustomerID)
+                   .HasPrincipalKey(x => x.CustomerID);
         }
     }
 }
