@@ -20,5 +20,6 @@ namespace AccountService.Core.Entities
         public string PhoneNumber { get; set; }
         public DateTime CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }
+        public ICollection<Account> Accounts { get; set; }
     }
 }
